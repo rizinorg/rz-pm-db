@@ -1,0 +1,10 @@
+name: a3a
+type: git
+repo: https://github.com/radare/radare2-rust
+desc: "[rust] a3a - full program analysis in Rust (by defragger)"
+
+install: 
+  - make -C a3a
+
+uninstall:
+  - make -C a3a uninstall

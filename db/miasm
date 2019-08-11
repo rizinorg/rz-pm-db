@@ -7,7 +7,7 @@ install:
   - git checkout -b fix-macos-build
   - git pull origin fix-macos-build
   - python setup.py build
-  - sudo python setup.py install
+  - python setup.py install
 
 uninstall:
-  - sudo python setup.py uninstall
+  - python setup.py uninstall
