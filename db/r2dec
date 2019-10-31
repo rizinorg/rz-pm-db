@@ -1,7 +1,7 @@
 name: r2dec
 type: git
-repo: https://github.com/wargio/r2dec-js
-desc: "[r2-r2pipe-node] an Experimental Decompiler"
+repo: https://github.com/radareorg/r2dec-js
+desc: "[r2-native] converts asm to pseudo-C code."
 
 install: 
   - make -C p
