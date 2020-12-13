@@ -1,10 +1,10 @@
-R2PM Database
+rz-pm Database
 =============
 
-The radare2 plugins/packages database for r2pm.
+The rizin plugins/packages database for rz-pm.
 
 Allows to install, update, uninstall and discover plugins
-and tools that can be used with radare2.
+and tools that can be used with rizin.
 
-See https://github.com/radareorg/r2pm for r2pm.
+See https://github.com/rizinorg/rz-pm for rz-pm.
 
