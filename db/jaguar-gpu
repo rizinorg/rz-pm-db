@@ -1,0 +1,8 @@
+name: jaguar-cpu
+version: 0.0.1
+description: Jaguar CPU disassembler
+source:
+  url: https://github.com/rizinorg/rizin-extras/archive/refs/tags/v0.4.0.tar.gz
+  hash: 360ae8e7aaad407707a34896708788b391e30a6de0fb5e642f624659d67e6fcf
+  directory: jaguar-cpu
+  build_system: meson
