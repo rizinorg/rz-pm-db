@@ -1,0 +1,8 @@
+name: rz-libswift
+version: 0.4.0
+description: Swift Demangling library
+source:
+  url: https://github.com/rizinorg/rz-libswift/archive/refs/tags/v0.4.0.tar.gz
+  hash: be9b43ed318c6ad9999633e509bedd91bd26c66dd4633033528497ccf7604bdb
+  directory: rz-libswift-0.4.0
+  build_system: meson
