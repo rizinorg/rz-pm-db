@@ -1,6 +1,6 @@
 name: rz-libyara
 version: 0.4.1
-description: Create, parse and apply YARA rules
+summary: Create, parse and apply YARA rules
 source:
   url: https://github.com/rizinorg/rz-libyara/archive/refs/tags/v0.4.1.tar.gz
   hash: 9bec745e58454ffaa681520d6a19c26fd87c344117f7e279d9dc937efb6ab6a9
