@@ -1,0 +1,7 @@
+name: rz-silhouette
+version: dev
+summary: Plugin for the Rizin Silhouette server
+source:
+  url: https://github.com/rizinorg/rz-silhouette.git
+  directory: rz-silhouette/
+  build_system: meson
