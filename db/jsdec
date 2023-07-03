@@ -1,10 +1,9 @@
 name: jsdec
-version: 0.5.0
+version: dev
 summary: Converts asm to pseudo-C code
 source:
-  url: https://github.com/rizinorg/jsdec/archive/refs/tags/v0.5.0.tar.gz
-  hash: ef73ccc609c7c0b010fc33ffac51d9352451515e355684ca9f01883b4f4db5eb
-  directory: jsdec-0.5.0/p
+  url: https://github.com/rizinorg/jsdec.git
+  directory: jsdec/p
   build_system: meson
   build_arguments:
     - -Djsc_folder=..

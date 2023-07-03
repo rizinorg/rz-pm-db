@@ -1,8 +1,7 @@
 name: rz-libyara
-version: 0.5.0
+version: dev
 summary: Create, parse and apply YARA rules
 source:
-  url: https://github.com/rizinorg/rz-libyara/archive/refs/tags/v0.5.0.tar.gz
-  hash: f83b49eca453c1e7d0917a6e4695499e3afcb807bd89d5fbe97891aec7ece69e
-  directory: rz-libyara-0.5.0
+  url: https://github.com/rizinorg/rz-libyara.git
+  directory: rz-libyara
   build_system: meson

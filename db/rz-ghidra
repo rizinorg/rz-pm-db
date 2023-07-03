@@ -1,8 +1,7 @@
 name: rz-ghidra
-version: 0.5.0
+version: dev
 summary: Deep ghidra decompiler and sleigh disassembler integration for rizin
 source:
-  url: https://github.com/rizinorg/rz-ghidra/releases/download/v0.5.0/rz-ghidra-src-v0.5.0.tar.gz
-  hash: cb3da4b7d21324062ab94eff9e892dbb69de2be1133275c7ae9aff37b91404c7
+  url: https://github.com/rizinorg/rz-ghidra.git
   build_system: cmake
   directory: rz-ghidra

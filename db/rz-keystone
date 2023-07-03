@@ -1,10 +1,9 @@
 name: rz-keystone
-version: 0.5.0
+version: dev
 summary: Add assembler plugins based on Keystone Engine
 source:
-  url: https://github.com/rizinorg/rizin-extras/archive/refs/tags/v0.5.0.tar.gz
-  hash: 1bf3f3e4b1a5a75a4a4c71c6f5327ccc78b6c3b1da5bdf0311573af7dac6e57a
-  directory: rizin-extras-0.5.0/keystone
+  url: https://github.com/rizinorg/rizin-extras.git
+  directory: rizin-extras/keystone
   build_system: meson
   build_arguments:
     - -Duse_sys_keystone=false
