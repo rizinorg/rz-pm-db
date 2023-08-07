@@ -1,7 +1,8 @@
 name: rz-svd
-version: dev
+version: 0.6.0
 summary: SVD loader
 source:
-  url: https://github.com/rizinorg/rizin-extras.git
-  directory: rizin-extras/rz-svd
+  url: https://github.com/rizinorg/rizin-extras/archive/refs/tags/v0.5.0.tar.gz
+  hash: 1bf3f3e4b1a5a75a4a4c71c6f5327ccc78b6c3b1da5bdf0311573af7dac6e57a
+  directory: rizin-extras-0.5.0/rz-svd
   build_system: meson

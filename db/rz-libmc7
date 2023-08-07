@@ -1,7 +1,8 @@
 name: rz-libmc7
-version: dev
+version: 0.6.0
 summary: Disassembler for MC7 bytecode for Siemens PLC SIMATIC S7-300 and S7-400
 source:
-  url: https://github.com/rizinorg/rz-libmc7.git
-  directory: rz-libmc7
+  url: https://github.com/rizinorg/rz-libmc7/archive/refs/tags/v0.6.0.tar.gz
+  hash: 21fe950b17afb7dd82d90176697469dfaa650e592c24d6e9852bb9aed4b0dc15
+  directory: rz-libmc7-0.6.0
   build_system: meson
