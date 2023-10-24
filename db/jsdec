@@ -3,7 +3,7 @@ version: 0.6.0
 summary: Converts asm to pseudo-C code
 source:
   url: https://github.com/rizinorg/jsdec/archive/refs/tags/v0.6.0.tar.gz
-  hash: ef73ccc609c7c0b010fc33ffac51d9352451515e355684ca9f01883b4f4db5eb
+  hash: bd42b8a95994a071d48536d6e04c1e163de71ade2c0ccac5b5058274b488478a
   directory: jsdec-0.6.0/p
   build_system: meson
   build_arguments:
