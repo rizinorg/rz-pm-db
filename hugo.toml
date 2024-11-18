@@ -1,7 +1,7 @@
-baseURL = ""
+baseURL = "https://rizin.netlify.app/"
 languageCode = "en-us"
 title = "Rizin | Package Manager"
-theme = "PaperMod"
+theme = "ananke"
 
 [menu]
   [[menu.main]]
