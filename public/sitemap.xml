@@ -2,39 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:54107/categories/</loc>
+    <loc>http://localhost:54169/categories/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/tags/gpu/</loc>
+    <loc>http://localhost:54169/tags/gpu/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/packages/jaguar_gpu/</loc>
+    <loc>http://localhost:54169/packages/jaguar_gpu/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/packages/jsdec/</loc>
+    <loc>http://localhost:54169/packages/jsdec/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/packages/kvx/</loc>
+    <loc>http://localhost:54169/packages/kvx/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/packages/</loc>
+    <loc>http://localhost:54169/packages/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/</loc>
+    <loc>http://localhost:54169/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/packages/rz-ghidra/</loc>
+    <loc>http://localhost:54169/packages/rz-ghidra/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/packages/rz-keystone/</loc>
+    <loc>http://localhost:54169/packages/rz-keystone/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/tags/</loc>
+    <loc>http://localhost:54169/tags/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/categories/tech/</loc>
+    <loc>http://localhost:54169/categories/tech/</loc>
     <lastmod>2024-11-18T18:03:47+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:54107/archives/</loc>
+    <loc>http://localhost:54169/archives/</loc>
   </url>
 </urlset>
