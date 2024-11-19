@@ -6,6 +6,9 @@ toc = true
 
 ShowBreadCrumbs = true
 
+[params]
+  allowExternalUrls = true
+  
 [menu]
   [[menu.main]]
     identifier = "packages"
