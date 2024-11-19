@@ -7,9 +7,16 @@
     <div class="{{ $cover_dimming_class }}">
       {{ partial "site-navigation.html" .}}
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          {{ .Title | default .Site.Title }}
-        </h1>
+        <div class="flex items-center justify-center">
+          <!-- Conditionally show logo only on the homepage -->
+          {{ if eq .RelPermalink "/" }}
+            <img src="/images/logo.png" alt="Logo" style="width: 3rem; height: auto; margin-top: 0.5rem;" class="mr3" />
+          {{ end }}
+          <!-- Title -->
+          <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
+            {{ .Title | default .Site.Title }}
+          </h1>
+        </div>
         {{ with .Params.description }}
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
             {{ . }}
@@ -23,10 +30,16 @@
     <div class="pb1-m pb1-m {{ .Site.Params.background_color_class | default "bg-custom" }}">
       {{ partial "site-navigation.html" . }}
       <div class="tc-l pv0 ph3 ph4-ns">
-        <h1 class="f1 f-subheadline-m fw2 light-silver mb0 lh-title">
-          <img src="/images/logo.png" alt="Logo" style="width: 3rem; height: auto;" />
-          {{ .Title | default .Site.Title }} 
-        </h1>
+        <div class="flex items-center justify-center">
+          <!-- Conditionally show logo only on the homepage -->
+          {{ if eq .RelPermalink "/" }}
+            <img src="/images/logo.png" alt="Logo" style="width: 3rem; height: auto; margin-top: 1.5rem;" class="mr3" />
+          {{ end }}
+          <!-- Title -->
+          <h1 class="f1 f-subheadline-m fw2 light-silver mb0 lh-title">
+            {{ .Title | default .Site.Title }} 
+          </h1>
+        </div>
         {{ with .Params.description }}
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
             {{ . }}
