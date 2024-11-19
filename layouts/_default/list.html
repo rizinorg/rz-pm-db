@@ -19,16 +19,17 @@
     <section class="table-container">
       <table class="f6 w-100 mw8 center" cellspacing="0" style="border-collapse: collapse;">
         <thead>
-          <tr>
+          <tr style="background-color: #d3d3d3;"> <!-- Light grey background for header -->
             <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Package</th>
             <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Version</th>
             <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Architecture</th>
             <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Description</th>
-            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">URL</th> <!-- New URL column -->
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">URL</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Date</th> <!-- New Date Column -->
           </tr>
         </thead>
         <tbody>
-          {{ range .Paginator.Pages }}
+          {{ range sort .Paginator.Pages ".Title" }} <!-- Sort by title alphabetically -->
             <tr class="package-row">
               <td class="pa3 package-name" style="border: 1px solid #ccc;">
                 <a href="{{ .Permalink }}" class="link blue">{{ .Title }}</a>
@@ -37,7 +38,10 @@
               <td class="pa3" style="border: 1px solid #ccc;">{{ .Params.architecture }}</td>
               <td class="pa3" style="border: 1px solid #ccc;">{{ .Params.description }}</td>
               <td class="pa3" style="border: 1px solid #ccc;">
-                <a href="{{ .Params.url }}" target="_blank" class="link blue">Visit</a> <!-- URL column -->
+                <a href="{{ .Params.url }}" target="_blank" class="link blue">Visit</a>
+              </td>
+              <td class="pa3" style="border: 1px solid #ccc;">
+                {{ .Date | dateFormat "2006-01-02" }} <!-- Display the date in a specific format -->
               </td>
             </tr>
           {{ end }}

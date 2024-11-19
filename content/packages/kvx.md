@@ -1,5 +1,6 @@
 +++
-date = '2024-11-18T18:03:47+05:30'
+date = "2024-11-12T18:03:47+05:30"
 draft = false
-title = 'kvx'
+title = "kvx"
+description = "Kalray VLIW Core disassembler/analysis"
 +++

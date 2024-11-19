@@ -1,5 +1,6 @@
 +++
-date = '2024-11-18T18:03:47+05:30'
+date = "2024-11-13T18:03:47+05:30"
 draft = false
-title = 'rz-ghidra'
+title = "rz-ghidra"
+description = "Deep ghidra decompiler and sleigh disassembler integration for rizin"
 +++
