@@ -1,13 +1,32 @@
 {{ define "main" }}
   <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
-      <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-      {{ .Content }}
-    </article>
-    {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
-    {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
     
-    {{/* Check to see if the section is defined for ranging through it */}}
-    {{range ($mainSections)}}
+    <!-- Container for Quick Search Text and Pagefind Search Bar -->
+    <div id="search-container" class="mb2">
+      <!-- Quick Search Typing Effect -->
+      <section id="quick-search" class="mb2">
+        <div class="typing">Quick Search...</div>
+      </section>
+
+      <!-- Pagefind Search Bar (Aligned to the left) -->
+      <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+      <script src="/pagefind/pagefind-ui.js"></script>
+      <div id="search" class="search-left"></div>
+      <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+          new PagefindUI({ element: "#search", showSubResults: true });
+        });
+      </script>
+    </div>
+
+    {{ .Content }}
+  </article>
+
+  {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
+  {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
+
+  {{/* Check to see if the section is defined for ranging through it */}}
+  {{range ($mainSections)}}
     {{/* Derive the section name  */}}
     {{ $section_name := . }}
     {{/* Create a variable with that section to use in multiple places. */}}
@@ -49,11 +68,10 @@
           {{ with $.Site.GetPage "section" $section_name }}
             <a href="{{ .RelPermalink }}" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">{{ i18n "allTitle" . }}</a>
           {{ end }}
-          </section>
+        </section>
         {{ end }}
 
-        </div>
+      </div>
     {{ end }}
   {{ end }}
 {{end}}
-    

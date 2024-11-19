@@ -1,0 +1,70 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+      {{- .Content -}}
+    </section>
+    
+    <!-- Pagefind Search Bar -->
+    <section id="search-container" class="mb4" style="padding-left: 200px; padding-right: 20px;">
+      <div id="search"></div>
+      <script src="/pagefind/pagefind-ui.js"></script>
+      <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ element: "#search", showSubResults: true });
+        });
+      </script>
+    </section>
+
+    <!-- Table with Package Data -->
+    <section class="table-container">
+      <table class="f6 w-100 mw8 center" cellspacing="0" style="border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: #d3d3d3;"> <!-- Light grey background for header -->
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Package</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Version</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Architecture</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Description</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">URL</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Date</th> <!-- New Date Column -->
+          </tr>
+        </thead>
+        <tbody>
+          {{ range sort .Paginator.Pages ".Title" }} <!-- Sort by title alphabetically -->
+            <tr class="package-row">
+              <!-- Package Name -->
+              <td class="pa3 package-name" style="border: 1px solid #ccc;">
+                <a href="{{ .Permalink }}" class="link blue">{{ .Title }}</a>
+              </td>
+              <!-- Version -->
+              <td class="pa3" style="border: 1px solid #ccc;">
+                {{ .Params.version | default "N/A" }}
+              </td>
+              <!-- Architecture -->
+              <td class="pa3" style="border: 1px solid #ccc;">
+                {{ .Params.architecture | default "N/A" }}
+              </td>
+              <!-- Description -->
+              <td class="pa3" style="border: 1px solid #ccc;">
+                {{ .Params.description | default "No description available." }}
+              </td>
+              <!-- URL -->
+              <td class="pa3" style="border: 1px solid #ccc;">
+                {{ if .Params.url }}
+                  <a href="{{ .Params.url }}" target="_blank" class="link blue">Visit</a>
+                {{ else }}
+                  N/A
+                {{ end }}
+              </td>
+              <!-- Date -->
+              <td class="pa3" style="border: 1px solid #ccc;">
+                {{ .Date | dateFormat "2006-01-02" }} <!-- Format to YYYY-MM-DD -->
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </section>
+
+    {{- template "_internal/pagination.html" . -}}
+  </article> 
+{{ end }}

@@ -32,3 +32,64 @@
   gap: 1rem; /* Add spacing between items */
   padding: 1rem;
 }
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Quick Search Typing Effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #000; /* Black cursor */
+  padding-left: 0.8em;
+  animation: typing 3s steps(20) 1 normal both, stopCursor 2s steps(20) 1 normal both; /* Adjusts animation */
+}
+
+@keyframes stopCursor {
+  0% {
+    border-right: 3px solid #000;
+  }
+  100% {
+    border-right: none;
+  }
+}
+
+/* Container for Quick Search Text and Pagefind Search Bar */
+#search-container {
+  text-align: left; /* Align both elements to the left */
+  margin-top: 20px;
+  padding-left: 20px; /* Ensure there is padding on the left */
+}
+
+/* Pagefind Search Bar */
+.search-left {
+  text-align: left; /* Ensure the search bar is aligned to the left */
+  margin-top: 10px; /* Optional: Adjust the spacing between the text and the search bar */
+}
+
+
