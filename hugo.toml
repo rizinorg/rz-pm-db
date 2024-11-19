@@ -2,6 +2,7 @@ baseURL = "https://rizin.netlify.app/"
 languageCode = "en-us"
 title = "Rizin | Package Manager"
 theme = "ananke"
+toc = true
 
 [menu]
   [[menu.main]]
