@@ -26,3 +26,9 @@
   background-color: #808080; 
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1rem; /* Add spacing between items */
+  padding: 1rem;
+}
