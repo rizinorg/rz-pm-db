@@ -7,7 +7,6 @@
     <div class="{{ $cover_dimming_class }}">
       {{ partial "site-navigation.html" .}}
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <img src="/path/to/logo.png" alt="Logo" class="header-logo" />
         <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
           {{ .Title | default .Site.Title }}
         </h1>
@@ -24,7 +23,8 @@
     <div class="pb1-m pb1-m {{ .Site.Params.background_color_class | default "bg-custom" }}">
       {{ partial "site-navigation.html" . }}
       <div class="tc-l pv0 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-m fw2 light-silver mb0 lh-title" style="padding-bottom: 1rem;">
+        <h1 class="f1 f-subheadline-m fw2 light-silver mb0 lh-title">
+          <img src="/images/logo.png" alt="Logo" style="width: 3rem; height: auto;" />
           {{ .Title | default .Site.Title }} 
         </h1>
         {{ with .Params.description }}
