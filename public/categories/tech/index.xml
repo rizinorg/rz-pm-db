@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on Rizin | Package Manager</title>
-    <link>http://localhost:53423/categories/tech/</link>
+    <link>http://localhost:54107/categories/tech/</link>
     <description>Recent content in Tech on Rizin | Package Manager</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Nov 2024 18:03:47 +0530</lastBuildDate>
-    <atom:link href="http://localhost:53423/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:54107/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>jaguar-gpu</title>
-      <link>http://localhost:53423/packages/jaguar_gpu/</link>
+      <link>http://localhost:54107/packages/jaguar_gpu/</link>
       <pubDate>Mon, 18 Nov 2024 18:03:47 +0530</pubDate>
-      <guid>http://localhost:53423/packages/jaguar_gpu/</guid>
+      <guid>http://localhost:54107/packages/jaguar_gpu/</guid>
       <description></description>
     </item>
   </channel>

@@ -23,7 +23,7 @@
     <div class="pb1-m pb1-m {{ .Site.Params.background_color_class | default "bg-custom" }}">
       {{ partial "site-navigation.html" . }}
       <div class="tc-l pv0 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-s fw3 light-silver mb0 lh-title" style="padding-bottom: 1rem;">
+        <h1 class="f2 f-subheadline-m fw2 light-silver mb0 lh-title" style="padding-bottom: 1rem;">
           {{ .Title | default .Site.Title }} 
         </h1>
         {{ with .Params.description }}
