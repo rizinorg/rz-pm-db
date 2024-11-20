@@ -92,4 +92,13 @@
   margin-top: 10px; /* Optional: Adjust the spacing between the text and the search bar */
 }
 
+#search-page {
+  text-align: left; /* Align both elements to the left */
+  margin-top: -100px;
+  padding-left: 420px;
+  font-size: 1.2rem;
+}
 
+#packages-table {
+  margin-top: -40px
+}
