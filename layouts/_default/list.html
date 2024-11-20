@@ -4,21 +4,7 @@
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
       {{- .Content -}}
     </section>
-    
-    <!-- Pagefind Search Bar Section -->
-    <section class="mb4" style="display: flex; justify-content: flex-start; align-items: center; padding-left: 190px; padding-right: 20px;">
-      <!-- Pagefind Search Bar on Left -->
-      <div id="search-page" style="flex: 1;">
-        <div id="search"></div>
-        <script src="/pagefind/pagefind-ui.js"></script>
-        <script>
-          window.addEventListener('DOMContentLoaded', (event) => {
-            new PagefindUI({ element: "#search", showSubResults: true });
-          });
-        </script>
-      </div>
-    </section>
-
+  
     <!-- Table with Package Data -->
     <section class="table-container">
       <table id="packages-table" class="f6 w-100 mw8 center" cellspacing="0" style="border-collapse: collapse;">
