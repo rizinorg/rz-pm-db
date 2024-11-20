@@ -102,3 +102,24 @@
 #packages-table {
   margin-top: -40px
 }
+
+/* Alternating row colors */
+#packages-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;  /* Light grey for odd rows */
+}
+
+#packages-table tbody tr:nth-child(even) {
+  background-color: #ffffff;  /* White for even rows */
+}
+
+#packages-table th {
+  background-color: #d3d3d3;  /* Light grey background for the header */
+}
+
+#packages-table td {
+  border: 1px solid #ccc;
+}
+
+#packages-table {
+  border-collapse: collapse;
+}

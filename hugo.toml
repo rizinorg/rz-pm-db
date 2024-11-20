@@ -2,13 +2,14 @@ baseURL = "https://rizin.netlify.app/"
 languageCode = "en-us"
 title = "Rizin | Package Manager"
 theme = "ananke"
-toc = true
 
 ShowBreadCrumbs = true
 
 [params]
   allowExternalUrls = true
-  
+  body_classes = "avenir bg-light-silver"
+  text_color = "near-black"
+
 [menu]
   [[menu.main]]
     identifier = "packages"
@@ -33,4 +34,3 @@ ShowBreadCrumbs = true
     name = "Archives"
     url = "/archives/"
     weight = 40
-
