@@ -1,0 +1,202 @@
+{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+{{ $featured_image_class := site.Params.featured_image_class | default "cover bg-top" }}
+{{ $cover_dimming_class := site.Params.cover_dimming_class | default "bg-black-60" }}
+
+{{ if $featured_image }}
+  <!-- Featured Image Section -->
+  <header class="{{ $featured_image_class }}" style="background-image: url('{{ $featured_image }}'); margin-bottom: 2rem;">
+    <div class="{{ $cover_dimming_class }}">
+      {{ partial "site-navigation.html" . }}
+      <div class="flex items-center justify-between tc-l pv4 pv6-l ph3 ph4-ns">
+        
+        <!-- Quick Search and Pagefind Search Bar on the right -->
+        <div class="flex items-center justify-end">
+          <div id="search-container" class="mb2">
+            <!-- Quick Search Typing Effect -->
+            <section id="quick-search" class="mb2">
+              <div class="typing">Quick Search...</div>
+            </section>
+  
+            <!-- Pagefind Search Bar -->
+            <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+            <script src="/pagefind/pagefind-ui.js"></script>
+            <div id="search" class="search-left"></div>
+            <script>
+              window.addEventListener('DOMContentLoaded', (event) => {
+                new PagefindUI({ element: "#search", showSubResults: true });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{{ else }}
+  <!-- No Featured Image Section -->
+  <header style="margin-bottom: 2rem;">
+    <div class="pb1-m pb1-m {{ .Site.Params.background_color_class | default "bg-custom" }}">
+      {{ partial "site-navigation.html" . }}
+      <div class="tc-l pv0 ph3 ph4-ns">
+        <div class="flex items-center justify-between">
+          
+          <!-- Quick Search and Pagefind Search Bar on the right -->
+          <div class="flex items-center justify-end">
+            <div id="search-container" class="mb2">
+              <!-- Quick Search Typing Effect -->
+              <section id="quick-search" class="mb2">
+                <div class="typing">Quick Search...</div>
+              </section>
+  
+              <!-- Pagefind Search Bar -->
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search" class="search-left"></div>
+              <script>
+                window.addEventListener('DOMContentLoaded', (event) => {
+                  new PagefindUI({ element: "#search", showSubResults: true });
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{{ end }}
+
+<!-- Pagefind Search Results Styling -->
+<style>
+{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+{{ $featured_image_class := site.Params.featured_image_class | default "cover bg-top" }}
+{{ $cover_dimming_class := site.Params.cover_dimming_class | default "bg-black-60" }}
+
+{{ if $featured_image }}
+  <!-- Featured Image Section -->
+  <header class="{{ $featured_image_class }}" style="background-image: url('{{ $featured_image }}'); margin-bottom: 2rem;">
+    <div class="{{ $cover_dimming_class }}">
+      {{ partial "site-navigation.html" . }}
+      <div class="flex items-center justify-between tc-l pv4 pv6-l ph3 ph4-ns">
+        
+        <!-- Quick Search and Pagefind Search Bar on the right -->
+        <div class="flex items-center justify-end">
+          <div id="search-container" class="mb2">
+            <!-- Quick Search Typing Effect -->
+            <section id="quick-search" class="mb2">
+              <div class="typing">Quick Search...</div>
+            </section>
+  
+            <!-- Pagefind Search Bar -->
+            <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+            <script src="/pagefind/pagefind-ui.js"></script>
+            <div id="search" class="search-left"></div>
+            <script>
+              window.addEventListener('DOMContentLoaded', (event) => {
+                new PagefindUI({ element: "#search", showSubResults: true });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{{ else }}
+  <!-- No Featured Image Section -->
+  <header style="margin-bottom: 2rem;">
+    <div class="pb1-m pb1-m {{ .Site.Params.background_color_class | default "bg-custom" }}">
+      {{ partial "site-navigation.html" . }}
+      <div class="tc-l pv0 ph3 ph4-ns">
+        <div class="flex items-center justify-between">
+          
+          <!-- Quick Search and Pagefind Search Bar on the right -->
+          <div class="flex items-center justify-end">
+            <div id="search-container" class="mb2">
+              <!-- Quick Search Typing Effect -->
+              <section id="quick-search" class="mb2">
+                <div class="typing">Quick Search...</div>
+              </section>
+  
+              <!-- Pagefind Search Bar -->
+              <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+              <script src="/pagefind/pagefind-ui.js"></script>
+              <div id="search" class="search-left"></div>
+              <script>
+                window.addEventListener('DOMContentLoaded', (event) => {
+                  new PagefindUI({ element: "#search", showSubResults: true });
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+{{ end }}
+
+<!-- Pagefind Search Results Styling with Blurred Background -->
+<style>
+/* Quick Search Container */
+#search-container {
+  text-align: left;
+  margin-top: -70px;
+  margin-bottom: 40px;
+}
+
+/* Pagefind Search Results */
+.pagefind-ui__results {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blurring the background */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Result Card Styling */
+.pagefind-ui__result {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagefind-ui__result:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pagefind-ui__result-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.pagefind-ui__result-title:hover {
+  color: #007acc;
+  text-decoration: underline;
+}
+
+.pagefind-ui__result-snippet {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.pagefind-ui__meta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 10px;
+}
+</style>
+
+<!-- Remove all h1 elements from the content -->
+{{ .Content | replaceRE "<h1[^>]*>.*?</h1>" "" }}
+
+</style>
+
+<!-- Remove all h1 elements from the content -->
+{{ .Content | replaceRE "<h1[^>]*>.*?</h1>" "" }}

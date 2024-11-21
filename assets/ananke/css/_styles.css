@@ -1,0 +1,272 @@
+/* Custom Styles */
+
+/* Table of Contents */
+#TableOfContents ul li {
+  margin-bottom: 1em;
+}
+
+/* Blockquote Styling */
+.lh-copy blockquote {
+  display: block;
+  font-size: .875em;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+}
+
+/* Links within nested elements */
+.nested-links a {
+  overflow-wrap: break-word;
+}
+
+/* Custom Background Color */
+.bg-custom {
+  background-color: #808080;
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1rem; /* Add spacing between items */
+  padding: 1rem;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #000; /* Black cursor */
+  padding-left: 0.8em;
+  animation: typing 3s steps(20) 1 normal both, stopCursor 2s steps(20) 1 normal both; /* Adjusts animation */
+}
+
+@keyframes stopCursor {
+  0% {
+    border-right: 3px solid #000;
+  }
+  100% {
+    border-right: none;
+  }
+}
+
+/* Quick Search Container */
+#search-container {
+  max-width: 500px; /* Updated max-width */
+  text-align: left;
+  margin-top: -70px; /* Adjusting positioning */
+  margin-bottom: 40px; /* Spacing below */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+
+/* Table styling */
+#packages-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px; /* Add curved edges to the entire table */
+  margin-top: -60px;
+}
+
+/* Table header styling */
+#packages-table th {
+  background-color: #d3d3d3; /* Light grey background for header */
+  padding: 15px;  /* Increased padding for bigger header rows */
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+/* Table cell styling */
+#packages-table td {
+  padding: 15px;  /* Increased padding for bigger table cells */
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Row hover effect */
+#packages-table tbody tr:hover {
+  background-color: #f4f4f4; /* Light grey highlight when hovering over row */
+}
+
+/* Curved edges for individual rows */
+#packages-table tbody tr {
+  border-radius: 8px; /* Curved edges for rows */
+}
+
+/* Row link color */
+.package-name a {
+  color: #007bff; /* Blue color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.package-name a:hover {
+  color: #0056b3; /* Darker blue color on hover */
+}
+
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center; /* Center the pagination links */
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+/* Pagination button styling */
+.pagination a {
+  text-decoration: none;
+  color: #007bff; /* Blue color for pagination links */
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded corners for pagination buttons */
+  background-color: #f4f4f4; /* Light background color */
+}
+
+.pagination a:hover {
+  background-color: #e2e2e2; /* Darker background on hover */
+  color: #0056b3; /* Darker color for text on hover */
+}
+
+/* Recent Packages */
+.recent-packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1.5rem;
+}
+
+/* Package Box */
+.package-box {
+  background-color: #CCCCCC;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.package-header {
+  margin-bottom: 1.5rem;
+}
+
+.package-box h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.package-box p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.package-box a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007acc;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Center the header container at the top of the page */
+.header-container {
+  display: flex;
+  align-items: center;  /* Vertically center the image and text */
+  justify-content: center;  /* Horizontally center the content */
+  position: absolute;  /* Position it absolutely to control placement */
+  top: 20px;  /* Adjust this value to move it closer/further from the top */
+  left: 50%;
+  transform: translateX(-50%) translateX(10px);  /* Move it to the exact center and then shift 25px to the right */
+  z-index: 100;  /* Make sure it’s on top of other elements */
+}
+
+/* Ensure the text remains responsive and centered */
+.header-text {
+  font-size: 3.8rem;
+  margin-left: 10px;  /* Add a little space between the image and the text */
+  text-decoration: none; /* Remove underline by default */
+  font-family: 'Lato', sans-serif;  /* Use the 'Lato' font-family for a slimmer look */
+  font-weight: 300;  /* Lighter weight to make it slimmer */
+  color: #333333; /* Default text color */
+}
+
+/* Hover effect for the header text */
+.header-text:hover {
+  color: #F4B41C; /* Change color to orange on hover */
+  cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+}
+
+/* Quick Search Container */
+#search-container {
+  text-align: left;
+  margin-top: -70px;
+  margin-bottom: 40px;
+}
+
+/* Quick Search Container */
+#search-container {
+  text-align: left;
+  margin-top: -70px;
+  margin-bottom: 40px;
+}
+
+/* Pagefind Search Results */
+.pagefind-ui__results {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9; /* Ensure background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Make sure it's above the header */
+}
+
+.pagefind-ui__result {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagefind-ui__result:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pagefind-ui__result-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.pagefind-ui__result-title:hover {
+  color: #007acc;
+  text-decoration: underline;
+}
+
+.pagefind-ui__result-snippet {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.pagefind-ui__meta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 10px;
+}

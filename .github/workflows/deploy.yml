@@ -1,0 +1,21 @@
+name: Publish Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          submodules: true
+      - name: Hugo to GH Pages
+        uses: chabad360/hugo-gh-pages@master
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          cname: packages.rizin.re
