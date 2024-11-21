@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - master
-      - dev
-  pull_request:
-    branches:
-      - master
-      - dev
 
 jobs:
   build-deploy:
@@ -16,46 +11,20 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
-        with:
-          submodules: true
+        uses: actions/checkout@v2
 
-      # Install Hugo CLI (latest version)
       - name: Install Hugo
         run: |
-          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.139.0/hugo_extended_Linux_x86_64.deb
+          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/latest/download/hugo_extended_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m).deb
           sudo dpkg -i hugo.deb
 
-      # Install Node.js (latest LTS version)
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "lts"
-
-      # Build the site with Hugo
       - name: Build Site with Hugo
         run: |
-          hugo --buildDrafts --gc --verbose --baseURL ${{ github.repository }}
+          hugo --gc --verbose --baseURL ${{ github.repository }}
 
-      # Run Pagefind
-      - name: Run Pagefind
-        run: |
-          npx pagefind --site public
-
-      # Deploy to GitHub Pages for Master Branch
-      - name: Deploy to GitHub Pages (Master)
-        if: github.ref == 'refs/heads/master'
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: public
           cname: rizin.re
-
-      # Deploy to GitHub Pages for Dev Branch
-      - name: Deploy to GitHub Pages (Dev)
-        if: github.ref == 'refs/heads/dev'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
-          cname: dev.rizin.re
