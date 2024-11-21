@@ -1,34 +1,23 @@
 {{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+{{ $featured_image_class := site.Params.featured_image_class | default "cover bg-top" }}
+{{ $cover_dimming_class := site.Params.cover_dimming_class | default "bg-black-60" }}
+
 {{ if $featured_image }}
-  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
-  {{ $featured_image_class := site.Params.featured_image_class | default "cover bg-top" }}
+  <!-- Featured Image Section -->
   <header class="{{ $featured_image_class }}" style="background-image: url('{{ $featured_image }}'); margin-bottom: 2rem;">
-    {{ $cover_dimming_class := site.Params.cover_dimming_class | default "bg-black-60" }}
     <div class="{{ $cover_dimming_class }}">
-      {{ partial "site-navigation.html" .}}
+      {{ partial "site-navigation.html" . }}
       <div class="flex items-center justify-between tc-l pv4 pv6-l ph3 ph4-ns">
-        <!-- Title on the left -->
-        <div class="flex items-center justify-start">
-          <!-- Conditionally show logo only on the homepage -->
-          {{ if eq .RelPermalink "/" }}
-            <img src="/images/logo.png" alt="Logo" style="width: 3rem; height: auto; margin-top: 0.5rem;" class="mr3" />
-          {{ end }}
-          <!-- Title -->
-          <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-            {{ .Title | default .Site.Title }}
-          </h1>
-        </div>
         
         <!-- Quick Search and Pagefind Search Bar on the right -->
         <div class="flex items-center justify-end">
-          <!-- Container for Quick Search Text and Pagefind Search Bar -->
           <div id="search-container" class="mb2">
             <!-- Quick Search Typing Effect -->
             <section id="quick-search" class="mb2">
               <div class="typing">Quick Search...</div>
             </section>
   
-            <!-- Pagefind Search Bar (Aligned to the right) -->
+            <!-- Pagefind Search Bar -->
             <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
             <script src="/pagefind/pagefind-ui.js"></script>
             <div id="search" class="search-left"></div>
@@ -43,33 +32,22 @@
     </div>
   </header>
 {{ else }}
+  <!-- No Featured Image Section -->
   <header style="margin-bottom: 2rem;">
     <div class="pb1-m pb1-m {{ .Site.Params.background_color_class | default "bg-custom" }}">
       {{ partial "site-navigation.html" . }}
       <div class="tc-l pv0 ph3 ph4-ns">
         <div class="flex items-center justify-between">
-          <!-- Title on the left -->
-          <div class="flex items-center justify-start">
-            <!-- Conditionally show logo only on the homepage -->
-            {{ if eq .RelPermalink "/" }}
-              <img src="/images/logo.png" alt="Logo" style="width: 3rem; height: auto; margin-top: 1.5rem;" class="mr3" />
-            {{ end }}
-            <!-- Title -->
-            <h1 class="f1 f-subheadline-m fw2 light-silver mb0 lh-title">
-              {{ .Title | default .Site.Title }} 
-            </h1>
-          </div>
-
+          
           <!-- Quick Search and Pagefind Search Bar on the right -->
           <div class="flex items-center justify-end">
-            <!-- Container for Quick Search Text and Pagefind Search Bar -->
             <div id="search-container" class="mb2">
               <!-- Quick Search Typing Effect -->
               <section id="quick-search" class="mb2">
                 <div class="typing">Quick Search...</div>
               </section>
-
-              <!-- Pagefind Search Bar (Aligned to the right) -->
+  
+              <!-- Pagefind Search Bar -->
               <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
               <script src="/pagefind/pagefind-ui.js"></script>
               <div id="search" class="search-left"></div>
@@ -85,3 +63,6 @@
     </div>
   </header>
 {{ end }}
+
+<!-- Remove all h1 elements from the content -->
+{{ .Content | replaceRE "<h1[^>]*>.*?</h1>" "" }}

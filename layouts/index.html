@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+  <article class="cf ph3 ph5-l pv2 pv1-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
     {{ .Content }}
   </article>
 
@@ -24,11 +24,17 @@
 
         {{ $n_posts := $.Param "recent_posts_number" | default 3 }}
 
-        <section class="w-100 mw8">
+        <section class="w-100 mw8 recent-packages">
           {{/* Range through the first $n_posts items of the section */}}
           {{ range (first $n_posts $section) }}
-            <div class="relative w-100 mb4">
-              {{ .Render "summary-with-image" }}
+            <div class="package-box relative w-100 mb4 p4 br3 bg-light-gray shadow-2">
+              <div class="package-header mb3">
+                <h2 class="f4 fw6 mb2">{{ .Title }}</h2>
+                <p class="f5 text-muted">{{ .Date.Format "January 2, 2006" }}</p>
+              </div>
+              {{/* Fetch the description from the Markdown file */}}
+              <p class="f6 lh-copy">{{ .Summary }}</p>
+              <a href="{{ .RelPermalink }}" class="link blue dim f6 mt3">Read More</a>
             </div>
           {{ end }}
         </section>

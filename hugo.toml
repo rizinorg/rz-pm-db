@@ -9,6 +9,7 @@ ShowBreadCrumbs = true
   allowExternalUrls = true
   body_classes = "avenir bg-light-silver"
   text_color = "near-black"
+  site_logo = "/images/logo.svg"
 
 [menu]
   [[menu.main]]
@@ -28,9 +29,3 @@ ShowBreadCrumbs = true
     name = "Tags"
     url = "/tags/"
     weight = 30
-
-  [[menu.main]]
-    identifier = "archives"
-    name = "Archives"
-    url = "/archives/"
-    weight = 40

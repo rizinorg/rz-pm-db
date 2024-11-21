@@ -1,9 +1,11 @@
-/* Put your custom styles here and run `npm start` from the "src" directory on */
+/* Custom Styles */
 
+/* Table of Contents */
 #TableOfContents ul li {
   margin-bottom: 1em;
 }
 
+/* Blockquote Styling */
 .lh-copy blockquote {
   display: block;
   font-size: .875em;
@@ -12,20 +14,19 @@
   margin-bottom: 2rem;
   border-left: 4px solid #ccc;
   padding-left: 1rem;
-
 }
 
-.nested-links a{
+/* Links within nested elements */
+.nested-links a {
   overflow-wrap: break-word;
 }
 
-/* assets/css/custom.css */
-
-/* You can add more colors as needed */
+/* Custom Background Color */
 .bg-custom {
-  background-color: #808080; 
+  background-color: #808080;
 }
 
+/* Grid Container */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
@@ -33,25 +34,7 @@
   padding: 1rem;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* Quick Search Typing Effect */
+/* Typing Animation */
 @keyframes typing {
   from {
     width: 0;
@@ -79,47 +62,143 @@
   }
 }
 
-/* Container for Quick Search Text and Pagefind Search Bar */
+/* Quick Search Container */
 #search-container {
-  text-align: left; /* Align both elements to the left */
-  margin-top: 20px;
-  padding-left: 20px; /* Ensure there is padding on the left */
+  text-align: left;
+  margin-top: -70px;
+  margin-bottom: 30px;
 }
 
-/* Pagefind Search Bar */
-.search-left {
-  text-align: left; /* Ensure the search bar is aligned to the left */
-  margin-top: 10px; /* Optional: Adjust the spacing between the text and the search bar */
-}
-
-#search-page {
-  text-align: left; /* Align both elements to the left */
-  margin-top: -140px;
-  padding-left: 420px;
-  font-size: 1.2rem;
-}
-
+/* Table styling */
 #packages-table {
-  margin-top: -40px
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px; /* Add curved edges to the entire table */
+  margin-top: -60px;
 }
 
-/* Alternating row colors */
-#packages-table tbody tr:nth-child(odd) {
-  background-color: #f9f9f9;  /* Light grey for odd rows */
-}
-
-#packages-table tbody tr:nth-child(even) {
-  background-color: #ffffff;  /* White for even rows */
-}
-
+/* Table header styling */
 #packages-table th {
-  background-color: #d3d3d3;  /* Light grey background for the header */
-}
-
-#packages-table td {
+  background-color: #d3d3d3; /* Light grey background for header */
+  padding: 15px;  /* Increased padding for bigger header rows */
+  text-align: left;
   border: 1px solid #ccc;
 }
 
-#packages-table {
-  border-collapse: collapse;
+/* Table cell styling */
+#packages-table td {
+  padding: 15px;  /* Increased padding for bigger table cells */
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Row hover effect */
+#packages-table tbody tr:hover {
+  background-color: #f4f4f4; /* Light grey highlight when hovering over row */
+}
+
+/* Curved edges for individual rows */
+#packages-table tbody tr {
+  border-radius: 8px; /* Curved edges for rows */
+}
+
+/* Row link color */
+.package-name a {
+  color: #007bff; /* Blue color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.package-name a:hover {
+  color: #0056b3; /* Darker blue color on hover */
+}
+
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center; /* Center the pagination links */
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+/* Pagination button styling */
+.pagination a {
+  text-decoration: none;
+  color: #007bff; /* Blue color for pagination links */
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded corners for pagination buttons */
+  background-color: #f4f4f4; /* Light background color */
+}
+
+.pagination a:hover {
+  background-color: #e2e2e2; /* Darker background on hover */
+  color: #0056b3; /* Darker color for text on hover */
+}
+
+/* Recent Packages */
+.recent-packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1.5rem;
+}
+
+/* Package Box */
+.package-box {
+  background-color: #CCCCCC;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.package-header {
+  margin-bottom: 1.5rem;
+}
+
+.package-box h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.package-box p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.package-box a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007acc;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Center the header container at the top of the page */
+.header-container {
+  display: flex;
+  align-items: center;  /* Vertically center the image and text */
+  justify-content: center;  /* Horizontally center the content */
+  position: absolute;  /* Position it absolutely to control placement */
+  top: 20px;  /* Adjust this value to move it closer/further from the top */
+  left: 50%;
+  transform: translateX(-50%) translateX(10px);  /* Move it to the exact center and then shift 25px to the right */
+  z-index: 100;  /* Make sure it’s on top of other elements */
+}
+
+/* Ensure the text remains responsive and centered */
+.header-text {
+  font-size: 3.8rem;
+  margin-left: 10px;  /* Add a little space between the image and the text */
+  text-decoration: none; /* Remove underline by default */
+  font-family: 'Lato', sans-serif;  /* Use the 'Lato' font-family for a slimmer look */
+  font-weight: 300;  /* Lighter weight to make it slimmer */
+  color: #333333; /* Default text color */
+}
+
+/* Hover effect for the header text */
+.header-text:hover {
+  color: #F4B41C; /* Change color to orange on hover */
+  cursor: pointer; /* Change cursor to pointer to indicate interactivity */
 }
