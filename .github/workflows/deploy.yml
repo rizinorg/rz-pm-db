@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Publish Site
 
 on:
   push:
@@ -11,16 +11,19 @@ on:
       - dev
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
 
-      # Install Hugo CLI (latest version) 
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      # Install Hugo CLI (latest version)
       - name: Install Hugo
         run: |
-          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.139.0/hugo_extended_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m).deb
+          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.139.0/hugo_extended_Linux_x86_64.deb
           sudo dpkg -i hugo.deb
 
       # Install Node.js (latest LTS version)
@@ -30,7 +33,7 @@ jobs:
           node-version: "lts"
 
       # Build the site with Hugo
-      - name: Build site with Hugo
+      - name: Build Site with Hugo
         run: |
           hugo --buildDrafts --gc --verbose --baseURL ${{ github.repository }}
 
@@ -39,17 +42,18 @@ jobs:
         run: |
           npx pagefind --site public
 
-      # Deploy to GitHub Pages - Stable for master, Dev for dev branch
-      - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      # Deploy to GitHub Pages for Master Branch
+      - name: Deploy to GitHub Pages (Master)
+        if: github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: public
           cname: rizin.re
 
-      - name: Deploy Dev to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+      # Deploy to GitHub Pages for Dev Branch
+      - name: Deploy to GitHub Pages (Dev)
+        if: github.ref == 'refs/heads/dev'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
