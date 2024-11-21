@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dissassembly on Rizin | Package Manager</title>
+    <link>http://localhost:1313/categories/dissassembly/</link>
+    <description>Recent content in Dissassembly on Rizin | Package Manager</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Nov 2024 18:03:47 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/dissassembly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>jaguar-gpu</title>
+      <link>http://localhost:1313/packages/jaguar_gpu/</link>
+      <pubDate>Sun, 10 Nov 2024 18:03:47 +0530</pubDate>
+      <guid>http://localhost:1313/packages/jaguar_gpu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>zpu</title>
+      <link>http://localhost:1313/packages/zpu/</link>
+      <pubDate>Wed, 16 Oct 2024 18:03:47 +0530</pubDate>
+      <guid>http://localhost:1313/packages/zpu/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

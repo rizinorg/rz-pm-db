@@ -207,3 +207,66 @@
   cursor: pointer; /* Change cursor to pointer to indicate interactivity */
 }
 
+/* Quick Search Container */
+#search-container {
+  text-align: left;
+  margin-top: -70px;
+  margin-bottom: 40px;
+}
+
+/* Quick Search Container */
+#search-container {
+  text-align: left;
+  margin-top: -70px;
+  margin-bottom: 40px;
+}
+
+/* Pagefind Search Results */
+.pagefind-ui__results {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9; /* Ensure background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Make sure it's above the header */
+}
+
+.pagefind-ui__result {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagefind-ui__result:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pagefind-ui__result-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.pagefind-ui__result-title:hover {
+  color: #007acc;
+  text-decoration: underline;
+}
+
+.pagefind-ui__result-snippet {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.pagefind-ui__meta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 10px;
+}
