@@ -15,8 +15,9 @@ jobs:
 
       - name: Install Hugo
         run: |
-          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/latest/download/hugo_extended_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m).deb
-          sudo dpkg -i hugo.deb
+          wget https://github.com/gohugoio/hugo/releases/latest/download/hugo_extended_$(uname -s)_$(uname -m).tar.gz
+          tar -xvzf hugo_extended_$(uname -s)_$(uname -m).tar.gz
+          sudo mv hugo /usr/local/bin/
 
       - name: Build Site with Hugo
         run: |
