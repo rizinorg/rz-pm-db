@@ -7,7 +7,7 @@ ShowBreadCrumbs = true
 
 [params]
   allowExternalUrls = true
-  body_classes = "avenir bg-light-silver"
+  body_classes = "avenir bg-light-gray"
   text_color = "near-black"
   site_logo = "/images/logo.svg"
 

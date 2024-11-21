@@ -64,10 +64,14 @@
 
 /* Quick Search Container */
 #search-container {
+  max-width: 500px; /* Updated max-width */
   text-align: left;
-  margin-top: -70px;
-  margin-bottom: 30px;
+  margin-top: -70px; /* Adjusting positioning */
+  margin-bottom: 40px; /* Spacing below */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
 }
+
 
 /* Table styling */
 #packages-table {
@@ -202,3 +206,4 @@
   color: #F4B41C; /* Change color to orange on hover */
   cursor: pointer; /* Change cursor to pointer to indicate interactivity */
 }
+
