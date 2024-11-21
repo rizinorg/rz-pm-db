@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+  pull_request:
+    branches:
+      - master
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # Install Hugo CLI (latest version)
+      - name: Install Hugo CLI
+        run: |
+          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/latest/download/hugo_extended_$(uname -s)_$(uname -m).deb
+          sudo dpkg -i hugo.deb
+
+      # Install Node.js (latest LTS version)
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts"
+
+      # Build the site with Hugo
+      - name: Build site with Hugo
+        run: |
+          hugo --buildDrafts --gc --verbose --baseURL ${{ github.repository }}
+
+      # Run Pagefind
+      - name: Run Pagefind
+        run: |
+          npx pagefind --site public
+
+      # Deploy to GitHub Pages - Stable for master, Dev for dev branch
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
+          cname: rizin.re
+
+      - name: Deploy Dev to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
+          cname: dev.rizin.re
