@@ -15,7 +15,8 @@ jobs:
 
       - name: Install Hugo
         run: |
-          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/latest/download/hugo_extended_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m).deb
+          LATEST_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r .tag_name)
+          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/${LATEST_VERSION}/hugo_extended_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m).deb
           sudo dpkg -i hugo.deb
 
       - name: Build Site with Hugo
