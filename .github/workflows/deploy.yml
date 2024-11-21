@@ -3,7 +3,7 @@ name: Publish Site
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-deploy:
@@ -11,21 +11,11 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      - name: Install Hugo
-        run: |
-          wget https://github.com/gohugoio/hugo/releases/latest/download/hugo_extended_$(uname -s)_$(uname -m).tar.gz
-          tar -xvzf hugo_extended_$(uname -s)_$(uname -m).tar.gz
-          sudo mv hugo /usr/local/bin/
-
-      - name: Build Site with Hugo
-        run: |
-          hugo --gc --verbose --baseURL ${{ github.repository }}
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/checkout@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
-          cname: rizin.re
+          submodules: true
+      - name: Hugo to GH Pages
+        uses: chabad360/hugo-gh-pages@master
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          cname: packages.rizin.re
