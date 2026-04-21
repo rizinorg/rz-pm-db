@@ -1,5 +1,5 @@
 name: rz-libyara
-version: dev
+version: 572b55219b99dce2e0b947c82b76e8d49193efa0
 summary: Create, parse and apply YARA rules
 source:
   url: https://github.com/rizinorg/rz-libyara.git

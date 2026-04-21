@@ -1,5 +1,5 @@
 name: rz-libswift
-version: dev
+version: v0.8.0
 summary: Swift Demangling library
 source:
   url: https://github.com/rizinorg/rz-libswift.git

@@ -1,5 +1,5 @@
 name: rz-silhouette
-version: dev
+version: cf24012fefbbf75f3fd76da0c089e2c6ac60ad07
 summary: Plugin for the Rizin Silhouette server
 source:
   url: https://github.com/rizinorg/rz-silhouette.git

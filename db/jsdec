@@ -1,5 +1,5 @@
 name: jsdec
-version: master
+version: v0.8.0
 summary: Converts asm to pseudo-C code
 source:
   url: https://github.com/rizinorg/jsdec.git
