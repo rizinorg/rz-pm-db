@@ -2,6 +2,7 @@ name: rz-retdec
 version: 8ed936db9de7cc182ce354202bc936665725f0d6
 summary: RetDec Decompiler Plugin for Rizin
 source:
-  url: https://github.com/rizinorg/rz-retdec.git
+  url: https://github.com/rizinorg/rz-retdec/archive/8ed936db9de7cc182ce354202bc936665725f0d6.tar.gz
+  hash: 6c569577088b653abeba83d9519573ee04836fa22f80251d315d63ca4a1c3c30
   build_system: cmake
-  directory: rz-retdec
+  directory: rz-retdec-8ed936db9de7cc182ce354202bc936665725f0d6

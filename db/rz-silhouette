@@ -1,7 +1,8 @@
 name: rz-silhouette
-version: cf24012fefbbf75f3fd76da0c089e2c6ac60ad07
+version: cf24012b16d3b762f4e52a0175eb027be12247ea
 summary: Plugin for the Rizin Silhouette server
 source:
-  url: https://github.com/rizinorg/rz-silhouette.git
-  directory: rz-silhouette/
+  url: https://github.com/rizinorg/rz-silhouette/archive/cf24012b16d3b762f4e52a0175eb027be12247ea.tar.gz
+  hash: 84fd4bd35c7d2f30defa58bdec480830abc8580d68b2b659f4dc08fa112ce8bd
+  directory: rz-silhouette-cf24012b16d3b762f4e52a0175eb027be12247ea
   build_system: meson
