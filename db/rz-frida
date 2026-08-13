@@ -1,0 +1,9 @@
+name: rz-frida
+version: dev
+summary: Frida dynamic instrumentation plugin for rizin
+source:
+  url: https://github.com/rizinorg/rz-frida.git
+  directory: rz-frida
+  build_system: meson
+  build_arguments:
+    - -Dfrida_core=enabled
