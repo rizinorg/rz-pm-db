@@ -1,0 +1,43 @@
+name: Publish Site
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      # Step 2: Set up Node.js environment
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
+
+      # Step 3: Set up Hugo
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3.0.0
+
+      # Step 4: Build the site with Hugo and run Pagefind for search indexing
+      - name: Build Site with Hugo and Pagefind
+        run: |
+          hugo
+          npx pagefind --site public
+
+      # Step 5: Deploy to GitHub Pages for the Dev Branch
+      - name: Deploy to GitHub Pages (Dev)
+        if: github.ref == 'refs/heads/dev'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
+          cname: packages.rizin.re

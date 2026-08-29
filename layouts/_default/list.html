@@ -1,0 +1,65 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <!-- Page Content -->
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+      {{- .Content -}}
+    </section>
+  
+    <!-- Table with Package Data -->
+    <section class="table-container">
+      <table id="packages-table" class="f6 w-100 mw8 center" cellspacing="0" style="border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: #d3d3d3;"> <!-- Light grey background for header -->
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Package</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Version</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Description</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">URL</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Date</th>
+            <th class="fw6 tl pa3" style="border: 1px solid #ccc;">Maintainer</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          {{ range .Paginator.Pages }} <!-- Default sorting by Hugo -->
+            <tr class="package-row" data-title="{{ .Title }}" data-date="{{ .Date }}">
+              <td class="pa3 package-name" style="border: 1px solid #ccc;">
+                <a href="{{ .Permalink }}" class="link blue">{{ .Title }}</a>
+              </td>
+              <td class="pa3" style="border: 1px solid #ccc;">{{ .Params.version }}</td>
+              <td class="pa3" style="border: 1px solid #ccc;">{{ .Params.description }}</td>
+              <td class="pa3" style="border: 1px solid #ccc;">
+                {{ if or (strings.HasPrefix .Params.external_url "http://") (strings.HasPrefix .Params.external_url "https://") }}
+                  <a href="{{ .Params.external_url }}" target="_blank" class="link blue">Visit</a>
+                {{ else }}
+                  <a href="{{ .Permalink }}" class="link blue">Visit</a>
+                {{ end }}
+              </td>
+              <td class="pa3" style="border: 1px solid #ccc;">
+                {{ .Date | dateFormat "2006-01-02" }}
+              </td>
+              <td class="pa3" style="border: 1px solid #ccc;">{{ .Params.maintainer }}</td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Pagination Template -->
+    {{- template "_internal/pagination.html" . -}}
+  </article>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tableBody = document.getElementById("table-body");
+      const rows = Array.from(tableBody.querySelectorAll("tr"));
+
+      // Default sorting by name (alphabetical ascending) on page load
+      const sortedRows = rows.sort((a, b) => 
+        a.dataset.title.localeCompare(b.dataset.title)
+      );
+
+      // Clear the current tbody and append the sorted rows
+      tableBody.innerHTML = "";  // Clear existing rows
+      sortedRows.forEach(row => tableBody.appendChild(row));  // Re-append sorted rows
+    });
+  </script>
+{{ end }}
