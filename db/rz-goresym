@@ -1,0 +1,8 @@
+name: rz-goresym
+version: main
+summary: Mandiant GoReSym bridge and RTTI metadata parser for Rizin
+source:
+  url: https://github.com/doomedraven/rz-goresym.git
+  directory: rz-goresym
+  build_system: meson
+  build_arguments: []
